@@ -1,0 +1,75 @@
+/* articleList.html용 CSS */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤더 부분 (게시글 목록, 작성 버튼) 스타일 */
+.header {
+    display: flex;
+    justify-content: space-between; /* 좌우 끝으로 배치 */
+    align-items: center;
+    width: 800px;
+    margin: 40px auto 20px; /* 위아래 여백을 주고 가운데 정렬 */
+}
+
+.header h1 {
+    color: #333;
+    font-size: 28px;
+    margin: 0;
+}
+
+.header button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.header button:hover {
+    background-color: #0056b3;
+}
+
+/* 게시글 목록이 들어갈 영역 스타일 */
+#articleList {
+    width: 800px;
+    margin: 0 auto; /* 가운데 정렬 */
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 20px; /* 내부 여백 추가 */
+}
+
+#articleList ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#articleList li {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#articleList li:last-child {
+    border-bottom: none;
+}
+
+#articleList li:hover {
+    background-color: #f0f0f0;
+}
+
+/* 게시글이 없을 때 메시지 스타일 */
+#articleList p {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}

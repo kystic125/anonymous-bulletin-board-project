@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ex.crudProject.repository.JdbcArticleRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-08-14T07:44:57.734Z" hostname="DESKTOP-A73935H" time="0.741">
+  <properties/>
+  <testcase name="saveAndFindByIdTest()" classname="ex.crudProject.repository.JdbcArticleRepositoryTest" time="0.741"/>
+  <system-out><![CDATA[16:44:55.455 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [ex.crudProject.repository.JdbcArticleRepositoryTest]: JdbcArticleRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:44:55.593 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration ex.crudProject.CrudProjectApplication for test class ex.crudProject.repository.JdbcArticleRepositoryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-14T16:44:56.107+09:00  INFO 11380 --- [    Test worker] e.c.r.JdbcArticleRepositoryTest          : Starting JdbcArticleRepositoryTest using Java 17.0.13 with PID 11380 (started by LeeWonWoo in C:\Users\LeeWonWoo\Desktop\crudProject\crudProject)
+2025-08-14T16:44:56.109+09:00  INFO 11380 --- [    Test worker] e.c.r.JdbcArticleRepositoryTest          : No active profile set, falling back to 1 default profile: "default"
+2025-08-14T16:44:57.714+09:00  INFO 11380 --- [    Test worker] e.c.r.JdbcArticleRepositoryTest          : Started JdbcArticleRepositoryTest in 1.957 seconds (process running for 3.142)
+2025-08-14T16:44:58.315+09:00  INFO 11380 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-14T16:44:58.400+09:00  INFO 11380 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://localhost/~/test user=SA
+2025-08-14T16:44:58.402+09:00  INFO 11380 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

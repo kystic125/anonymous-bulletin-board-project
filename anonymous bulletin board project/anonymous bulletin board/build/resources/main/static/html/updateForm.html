@@ -1,0 +1,70 @@
+<!-- updateForm.html 예시 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>글 수정</title>
+</head>
+<body>
+<h1>게시글 수정</h1>
+<form id="update-form">
+    <input type="text" id="title" name="title" placeholder="제목" /><br />
+    <textarea id="content" name="content" placeholder="내용"></textarea><br />
+    <input type="password" id="password" name="password" placeholder="비밀번호" /><br />
+    <button type="submit">수정 완료</button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // URL에서 글 ID 가져오기
+        const path = window.location.pathname;  // /update/1
+        const articleId = path.split('/')[2];
+
+        // 기존 글 데이터 API 호출
+        fetch(`/api/update/${articleId}`)
+            .then(res => {
+                if (!res.ok) throw new Error("글을 불러올 수 없습니다.");
+                return res.json();
+            })
+            .then(data => {
+                document.getElementById('title').value = data.title;
+                document.getElementById('content').value = data.content;
+            })
+            .catch(err => alert(err.message));
+
+        // 수정 폼 제출 이벤트
+        document.getElementById('update-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const pw = document.getElementById('password').value;
+            if (!pw) {
+                alert('비밀번호를 입력하세요.');
+                return;
+            }
+
+            const updatedData = {
+                title: document.getElementById('title').value,
+                content: document.getElementById('content').value,
+                password: pw
+            };
+
+            fetch(`/api/update/${articleId}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(updatedData)
+            })
+                .then(res => res.json())
+                .then(result => {
+                    if(result.success) {
+                        alert('수정 완료');
+                        window.location.href = `/article/${articleId}`;  // 상세 페이지 이동
+                    } else {
+                        alert('비밀번호가 틀립니다.');
+                    }
+                })
+                .catch(() => alert('서버 오류가 발생했습니다.'));
+        });
+    });
+</script>
+</body>
+</html>
